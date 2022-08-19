@@ -1,21 +1,30 @@
 <template>
  <div>
    <h1>
-    a simple example of a component in vue.js
+    a simple component in vue.js
   </h1>
-  <CarOptions/>
-  <hr/>
-  <CarComposition/>
+  <Car :power="power"/>
+  
+  
  </div>
 </template>
 
 <script>
-import CarComposition from './components/CarComposition.vue'
-import CarOptions from './components/CarOptions.vue'
+import Car from './components/Car.vue'
+
 export default {
   components: {
-    CarComposition,
-    CarOptions
+    Car
+  },
+
+  setup() {
+
+    let power = 30;
+
+    return {
+      power,
+     
+    }
   }
 
 }

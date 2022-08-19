@@ -1,4 +1,5 @@
 # vue-app
+# this is a simple application in vue 3.0 to learn about and how to use it.
 
 ## Project setup
 ```
