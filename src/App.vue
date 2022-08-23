@@ -3,7 +3,7 @@
    <h1>
     a simple component in vue.js
   </h1>
-  <Car :power="power"/>
+  <Car :power="power" :upPower="upPower" :downPower="downPower"/>
   
   
  </div>
@@ -11,6 +11,7 @@
 
 <script>
 import Car from './components/Car.vue'
+import { ref } from 'vue';
 
 export default {
   components: {
@@ -19,10 +20,22 @@ export default {
 
   setup() {
 
-    let power = 30;
+    let power = ref(30);
+
+    const upPower = () => {
+      power.value++;
+      console.log("increase power...");
+    }
+
+    const downPower = () => {
+      power.value--;
+      console.log("decrease power...");
+    }
 
     return {
       power,
+      upPower,
+      downPower,
      
     }
   }
